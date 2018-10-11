@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>卫生监督观察</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="{{ url_for('static',filename='ico.png')}}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css')}}" type="text/css" />
+</head>
+<body>
+    <div id="touchWrap">
+            <div id="circle"></div>
+    </div>
+    <!-- 导入JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/circle-menu.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script>
+               var menuData = [
+            { name: '瞭望先锋', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=1&sn=b83e965d0726506208a6fcc2e2122eee&chksm=7b393a524c4eb344c15fbd759a14ce9ce1e415426515548b08ad1e0e4f170d0fb0c9231b94fa#rd', ico: '{{ url_for('static', filename='img/8/瞭望先锋.png') }}' },
+            { name: '要闻直击', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=2&sn=0db3be152960b6f749e9143850b938ff&chksm=7b393a524c4eb3441e7a7ad44d7b8175d54f64d3a5bb235c37b6c87407d2357067461c974dd2#rd',ico: '{{ url_for('static', filename='img/8/要闻直击.png') }}' },
+            { name: '拍案惊奇', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=3&sn=14964d41e1e3d37590b056b50aa5c1a0&chksm=7b393a524c4eb3449df9f47490a92532de008fd9e05ec530af9f4ea2b27e8c12c8d48595a121#rd', ico: '{{ url_for('static', filename='img/8/拍案惊奇.png') }}' },
+            { name: '卫监内参', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=4&sn=8e244b1b96c9fae98962ba2a3d9aef7b&chksm=7b393a524c4eb34439908145c3c5d83100c82055b86f84d4430c87d4071a89dab9e5022b43f1#rd',ico: '{{ url_for('static', filename='img/8/卫监内参.png') }}' },
+            { name: '医界透视', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=5&sn=453fd43c8b577a38591812e50747017c&chksm=7b393a524c4eb3446a1d84a226a6819b2f987a54167057751d02845561126ba11ecac2c52e00#rd', ico: '{{ url_for('static', filename='img/8/医界透视.png') }}' },
+            { name: '健康顾问', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=6&sn=7c96cf58db9cd59dc66fbc7647d44942&chksm=7b393a524c4eb344b9196607ac7f029f12be6a05a4ddb227ca9c4f48c882c3ac4d866da19003#rd', ico: '{{ url_for('static', filename='img/8/健康顾问.png') }}' },
+            { name: '服务指南', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=7&sn=0222687ca9353c353e5966cfaa829330&chksm=7b393a524c4eb344728fda5ae08ee96884fd472ecd840c040114d5f9e4265b01fe8ee95266be#rd', ico: '{{ url_for('static', filename='img/8/服务指南.png') }}' },
+            { name: '约稿合作', url: 'http://mp.weixin.qq.com/s?__biz=MzU0MDQ4Nzk5Mw==&mid=100000260&idx=8&sn=3a0285d2ca63becae1f0878afb707aea&chksm=7b393a524c4eb3444f3134e4116a7a942ac2c23d3b9d3334432305ee7fff37b08e275de8d5a7#rd', ico: '{{ url_for('static', filename='img/8/约稿合作.png') }}' }
+        ];
+        var options = {
+            menu: menuData,     // 菜单数据
+            wrap: 'touchWrap',  // 根容器id
+            circle: 'circle',   // 转盘元素id
+            direction: 0,       // 旋转方向 0:逆时针, 1:顺时针, 只能是0或1, 默认 1
+            speed: 2           // 转动倍速, 介于0 和3之间, 默认1倍速
+            //division: 10       // 整圆周等分段数, 默认15, 每个菜单项占一个单位, 不能超过30, 不想小于5
+        };
+        new CircleMenu(options);
+    </script>
+    <!-- end -->
+</body>
+</html>

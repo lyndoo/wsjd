@@ -1,0 +1,67 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    医疗机构详情
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        .child_header {height: 50px; padding: 8px 4%; width: 100%;background: url(/static/img/headpng.png) no-repeat; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table class="table table-hover table-striped">
+        <tr>
+            <td colspan="2">
+                <div class="mapSize" id="container"></div>
+            </td>
+        </tr>
+        <tr>
+            <th width="25%">机构名称</th>
+            <td>{{ info['name'] }}</td>
+        </tr>
+        <tr>
+            <th>登记号</th>
+            <td>{{ info['no'] }}</td>
+        </tr>
+        <tr>
+            <th>机构地址</th>
+            <td>{{ info['address'] }}</td>
+        </tr>
+        <tr>
+            <th>有效期截止日</th>
+            <td>{{ info['lasttime'] }}</td>
+        </tr>
+        <tr>
+            <th>登记发证机关</th>
+            <td>{{ info['register'] }}</td>
+        </tr>
+        <tr>
+            <th>经营性质</th>
+            <td>{{ info['type'] }}</td>
+        </tr>
+        <tr>
+            <th>诊疗科目名称</th>
+            <td>{{ info['km'] }}</td>
+        </tr>
+        <tr>
+            <th>备注</th>
+            <td>{{ info['remark'] }}</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=crKWgWPc0eYr1YnDYsqZoRBVl8SnjeKb"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bdmap.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            setTimeout(function(){searchMap("{{ info['name'] }}","郑州市");},200);
+        });
+    </script>
+{% endblock%}
+
+{% block footer %}
+{% endblock %}

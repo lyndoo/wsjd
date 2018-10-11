@@ -1,0 +1,49 @@
+{% extends 'Master.html' %}
+{% block title %}
+    一键举报
+{% endblock %}
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+        .subtable2{
+            width: 100%;
+            color:#ffffff;
+        }
+        .subtable2 tr td{
+            text-align: center;
+            padding:10px 15px;
+        }
+        .subtable2 tr td a{
+            height: 60px;
+            color:#000;
+            font-size:14px;
+            line-height:25px;
+            padding:2px 20px;
+            background: url('/static/img/btn2.png') no-repeat center;
+        }
+        .subtable2 tr td a img{
+            position:relative;
+            top: -3px;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+    <table class="subtable2">
+            {% for name in names %}
+                <tr>
+                    <td>
+                        <a class="btn btn-block" href="tel:{{ name[1] }}">
+                            {{ name[0] }}<br/>
+                            <img src="{{ url_for('static', filename='img/phone.png') }}" class="phoneimg">&nbsp; {{ name[1] }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+{% endblock %}

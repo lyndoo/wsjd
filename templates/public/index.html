@@ -1,0 +1,38 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    公共场所
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<table class="subtable">
+    <tr>
+        <td class="text-center">郑州市</td>
+    </tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/8">美容店</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/1">理发店</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/2">宾馆</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/3">公共浴室</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/18">游泳场（馆）</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/7">旅店</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/9">商场（店）</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/14">影剧院</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/13">音乐厅</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/15">游艺厅（室）</a></td></tr>
+    <tr><td><a class="btn  btn-block" href="/public/list/17">招待所</a></td></tr>
+</table>
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

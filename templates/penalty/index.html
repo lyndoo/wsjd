@@ -1,0 +1,44 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    行政处罚
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<table class="subtable">
+    <tr>
+        <td class="text-center">郑州市本级行政处罚信息</td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-block" href="/penalty/list_0">法人</a></td>
+    </tr>
+    <tr>
+        <td><a class="btn btn-block" href="/penalty/list_1">自然人</a></td>
+    </tr>
+</table>
+    <!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">-->
+        <!--<h3 class="panel-title text-center">-->
+            <!--郑州市本级处罚信息-->
+        <!--</h3>-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+        <!--<ul class="list-group subli">-->
+            <!--<li class="list-group-item"><a class="btn btn-block" href="/penalty/list_0">法人</a></li>-->
+            <!--<li class="list-group-item"><a class="btn btn-block" href="/penalty/list_1">自然人</a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

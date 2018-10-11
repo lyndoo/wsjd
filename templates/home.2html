@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>卫生监督观察</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="shortcut icon" href="{{ url_for('static',filename='ico.png')}}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css')}}" type="text/css" />
+</head>
+<body>
+    <div id="touchWrap">
+            <div id="circle"></div>
+    </div>
+        <!--<li><a href="/report">一键举报</a></li>-->
+        <!--<li><a href="/penalty">行政处罚</a></li>-->
+        <!--<li><a href="/medical ">医疗机构</a></li>-->
+        <!--<li><a href="/hairdressing">医疗美容</a></li>-->
+        <!--<li><a href="/public">公共场所</a></li>-->
+        <!--<li><a href="/note">公告公示</a></li>-->
+        <!--<li><a href="/sanitation">卫监矩阵</a></li>-->
+        <!--<li><a href="/profession">执业查询</a></li>-->
+    <!-- 导入JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/circle-menu.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script>
+        var menuData = [
+            { name: '一键举报', url: '/report', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+            { name: '行政处罚', url: '/penalty', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+            { name: '医疗机构', url: '/medical', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+            { name: '医疗美容', url: '/hairdressing', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+            { name: '公共场所', url: '/public', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+            { name: '公告公示', url: '/note', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+            { name: '卫监矩阵', url: '/sanitation', ico: '{{ url_for('static', filename='img/home.svg') }}' },
+        ];
+        var options = {
+            menu: menuData,     // 菜单数据
+            wrap: 'touchWrap',  // 根容器id
+            circle: 'circle',   // 转盘元素id
+            direction: 1,       // 旋转方向 0:逆时针, 1:顺时针, 只能是0或1, 默认 1
+            speed: 1,           // 转动倍速, 介于0 和3之间, 默认1倍速
+            division: 10       // 整圆周等分段数, 默认15, 每个菜单项占一个单位, 不能超过30, 不想小于5
+        };
+        new CircleMenu(options);
+    </script>
+    <!-- end -->
+</body>
+</html>

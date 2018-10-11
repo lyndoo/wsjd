@@ -1,0 +1,68 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    地图搜索
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        html{height:100%}
+        body{height:100%;margin:0px;padding:0px}
+        #container{height:100%}
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table width="100%;">
+        <tr>
+            <div class="input-group" style="width: 100%;padding:8px 8px 1px 8px;">
+                <input id="txtKey" type="text" value="{{ mkey }}" class="form-control"/>
+                <span id="btnSearch" class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            </div>
+        </tr>
+    </table>
+
+    <div id="container"></div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=crKWgWPc0eYr1YnDYsqZoRBVl8SnjeKb"></script>
+    <script type="text/javascript">
+        var point = new BMap.Point(116.331398,39.897445);
+        var map = new BMap.Map("container");
+        $(document).ready(function(){
+            map.centerAndZoom(point,13);
+            searchMap("{{ mkey }}");
+
+            $("#btnSearch").click(function(){
+                searchMap($("#txtKey").val());
+            });
+           $("#txtKey").keyup(function(){
+                if(event.keyCode == "13") {
+                    searchMap($("#txtKey").val());
+                }
+            });
+        });
+        function searchMap(pKey)
+        {
+            var geolocation = new BMap.Geolocation();
+            geolocation.getCurrentPosition(function(r){
+                if(this.getStatus() == BMAP_STATUS_SUCCESS){
+                    var mk = new BMap.Marker(r.point);
+                    map.addOverlay(mk);
+                    map.panTo(r.point);
+                    var local = new BMap.LocalSearch(map,
+                                  { renderOptions:{map: map, autoViewport: false}});
+                    local.searchNearby(pKey,r.point,2000);
+                }
+                else {
+                    alert('错误：'+this.getStatus());
+                }
+             });
+        }
+    </script>
+{% endblock %}

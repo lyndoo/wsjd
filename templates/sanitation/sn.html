@@ -1,0 +1,106 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    省内卫监矩阵
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table class="santable text-center">
+        <tr>
+            <td width="33%">
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUxOTAzMjg5Mw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/河南卫监.png') }}" class="swsnimg" /><br/>河南省</a>
+            </td>
+            <td width="33%">
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzMDA1ODYwMA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/郑州卫生监督.png') }}" class="swsnimg" /><br/>郑州市</a>
+            </td>
+            <td width="33%">
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI0MjI0NzM4Mw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>开封市</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI3NzE5NjU5MA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/洛阳.png') }}" class="swsnimg" /><br/>洛阳市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3ODgxMzc1NQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>平顶山市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3Mjc2Nzg2NQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>安阳市</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA4NDAxNjM0MQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>鹤壁市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI4NTY1NzQ2OA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>新乡市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzODI2OTU0MQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>焦作市</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUzMTA4MTIwMw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>濮阳市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI5NTA3OTU5MQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/三门峡、许昌、南阳.png') }}" class="swsnimg" /><br/>许昌市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxMzYyMDQwOA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/三门峡、许昌、南阳.png') }}" class="swsnimg" /><br/>三门峡市</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIzNzE2MDE5Ng==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/三门峡、许昌、南阳.png') }}" class="swsnimg" /><br/>南阳市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNjcxMTM1Ng==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/济源、信阳.png') }}" class="swsnimg" /><br/>信阳市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxODI0Nzc4OA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>周口市</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIyNjc0MDI3Mw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/驻马店.png') }}" class="swsnimg" /><br/>驻马店市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU5MDI1NzQ1Ng==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/济源、信阳.png') }}" class="swsnimg" /><br/>济源市</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1MzcxMzUwMw==&scene=124&wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sn/开封、平顶山、安阳、新乡、焦作、濮阳、周口.png') }}" class="swsnimg" /><br/>商丘市</a>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

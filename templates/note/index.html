@@ -1,0 +1,67 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    公告公示
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table class="subtable">
+        <!--<tr><td><a class="btn btn-block" href="/out/29">国家卫生计生委</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/30">国家卫生计生委综合监督局</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/0">河南省卫生计生委</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/31">河南省卫生计生监督局</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/1">郑州市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/2">开封市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/3">洛阳市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/4">平顶山市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/5">安阳市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="http://www.hebi.gov.cn/wsjsw/1102792/1250263/index.html">鹤壁市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/7">新乡市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/8">焦作市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/9">濮阳市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/10">许昌市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/11">漯河市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/12">三门峡市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/13">南阳市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/14">商丘市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="http://www.hnxywjw.gov.cn/a/xzcf/">信阳市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/16">周口市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/17">驻马店市</a></td></tr>-->
+        <!--<tr><td><a class="btn btn-block" href="/out/18">济源市</a></td></tr>-->
+
+        <tr><td><a class="btn btn-block" href="http://www.nhfpc.gov.cn/zwgk/index.shtml">国家卫生计生委</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.nhfpc.gov.cn/zhjcj/pqt/new_list.shtml">国家卫生计生委综合监督局</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.hnwsjsw.gov.cn/4g/c.aspx?id=567">河南省卫生计生委</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://202.102.72.86:8100/index.html">河南省卫生计生监督局</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://wsjs.zhengzhou.gov.cn/tzgg/index.jhtml">郑州市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://jdsp.kfwsjsw.gov.cn/tzgg/">开封市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.lyws.gov.cn/sort/sort_3.shtml">洛阳市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://pdswsjsw.gov.cn/">平顶山市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="https://www.aywsjd.cn/News.asp?BigClassName=%C9%F3%C5%FA%B9%AB%CA%BE">安阳市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.hebi.gov.cn/wsjsw/1102792/1250263/index.html">鹤壁市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.xxswjw.gov.cn/page193">新乡市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.jzswsjd.com/tz/">焦作市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.pyswjw.gov.cn/list.asp?classid=6">濮阳市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.xcsjsw.gov.cn/tzgg/secondpage.html">许昌市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.lhwsjdw.com/articlecenter-86.aspx">漯河市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.smxwsjd.com/list.asp?id=148">三门峡市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.nywsjd.cn/index.php?m=content&c=index&a=lists&catid=43">南阳市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.sqwsjd.cn/plus/list.php?tid=8">商丘市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.hnxywjw.gov.cn/a/xzcf/">信阳市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.zkwsjd.com/NewsList.aspx?ParentId=13">周口市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://www.zmdwsj.gov.cn/pub/info/">驻马店市</a></td></tr>
+        <tr><td><a class="btn btn-block" href="http://wjw.jiyuan.gov.cn/xxgk/">济源市</a></td></tr>
+    </table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

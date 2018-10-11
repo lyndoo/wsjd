@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+        <meta name="x5-fullscreen" content="true">
+        <meta name="full-screen" content="yes">
+        {% block head %}
+            <title>
+            {% block title %}
+            {% endblock %}
+            </title>
+        {% endblock %}
+        <link href="{{ url_for('static', filename='bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='js/loading/jquery.mloading.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+    </head>
+    <body>
+        <!--<div class="child_header">-->
+            <!--<div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>-->
+        <!--</div>-->
+        {% block body %}
+        {% endblock %}
+        <footer  class="text-center">
+            {% block footer %}
+            {% endblock %}
+            <a href="javascript:" style="display: none" class="btnTop" id="btnTop" title="回到顶端">
+                <img src="{{ url_for('static',filename='top.png')}}"/>
+            </a>
+        </footer>
+       <!-- 导入JS -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/loading/jquery.mloading.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var timer = null;
+                var screenHeight = document.documentElement.clientHeight;
+                window.onscroll = function () {
+                    var backtop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+                    console.log(backtop+' '+screenHeight);
+                    if(backtop >= screenHeight){
+                        $("#btnTop").css("display","block");
+                    }
+                    else {
+                        $("#btnTop").css("display","none");
+                    }
+                };
+                $("#btnTop").click(function(){
+                    document.body.scrollTop = document.documentElement.scrollTop = 0;
+                });
+            });
+        </script>
+        {% block script %}
+        {% endblock %}
+        <!-- end -->
+    </body>
+</html>

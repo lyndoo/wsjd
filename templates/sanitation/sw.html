@@ -1,0 +1,92 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    国内卫监矩阵
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table class="santable text-center">
+        <tr>
+            <td width="33%">
+                    <img src="{{ url_for('static', filename='img/sw/深圳.png') }}" class="swsnimg" /><br/>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NDI4OTY3OA==&scene=124#wechat_redirect">深圳卫生监督</a>
+            </td>
+            <td width="33%">
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5NDkyMjQzOQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/浙江.png') }}" class="swsnimg" /><br/>浙江卫生计生<br/>监督</a>
+            </td>
+            <td width="33%">
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI4MDQ5MjYzMw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/广东.png') }}" class="swsnimg" /><br/>广东卫生监督</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI1ODEwNDA4Nw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/宁波.png') }}" class="swsnimg" /><br/>宁波卫生监督</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3MjU5NDAyMQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/杭州.png') }}" class="swsnimg" /><br/>杭州卫生监督</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAwNjg4ODYzNA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/四川.png') }}" class="swsnimg" /><br/>四川卫生计生<br/>监督</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzAxNTA1NDQ1OQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/东莞.png') }}" class="swsnimg" /><br/>东莞卫生监督</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MjM5ODI4MjQyOA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/舟山卫生监督.png') }}" class="swsnimg" /><br/>舟山卫生监督</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIwMDkyNjA2Nw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/上海卫生计生监督.png') }}" class="swsnimg" /><br/>上海卫生计生<br/>监督</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI1NzM1NDQxNQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/重庆卫生计生监督.png') }}" class="swsnimg" /><br/>重庆卫生计生<br/>监督</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5NDk5MTUzNw==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/辽宁卫生计生监督.png') }}" class="swsnimg" /><br/>辽宁卫生计生<br/>监督</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1NjAwNzg2NQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/南海.png') }}" class="swsnimg" /><br/>南海卫生监督</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI0NDcwMTczNQ==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/卫生监督员俱乐部.png') }}" class="swsnimg" /><br/>卫生监督员俱乐部</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI0NTAzMTIxMA==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/山东打非交流.png') }}" class="swsnimg" /><br/>山东打非交流</a>
+            </td>
+            <td>
+                <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIwMzY1NDk2Mg==&scene=124#wechat_redirect">
+                    <img src="{{ url_for('static', filename='img/sw/卫生监督员.png') }}" class="swsnimg" /><br/>卫生监督员</a>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    医疗机构
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<table class="subtable">
+    <tr>
+        <td class="text-center">郑州市</td>
+    </tr>
+    <tr><td><a class="btn btn-block" href="/medical/list/5">医院类机构</a></td></tr>
+    <tr><td><a class="btn btn-block" href="/hairdressing">医疗美容</a></td></tr>
+    <tr><td><a class="btn btn-block" href="/medical/list/2">门诊部</a></td></tr>
+    <tr><td><a class="btn btn-block" href="/medical/list/3">社区卫生服务机构</a></td></tr>
+    <tr><td><a class="btn btn-block" href="/medical/list/4">卫生院</a></td></tr>
+    <tr><td><a class="btn btn-block" href="/medical/list/1">检验机构</a></td></tr>
+    <tr><td><a class="btn btn-block" href="/medical/list/6">诊所</a></td></tr>
+</table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

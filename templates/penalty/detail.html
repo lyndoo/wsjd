@@ -1,0 +1,52 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    行政处罚详情
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        .child_header {height: 50px; padding: 8px 4%; width: 100%;background: url(/static/img/headpng.png) no-repeat; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table class="table table-hover table-striped">
+        <tr>
+            <th width="25%">行政人名称</th>
+            <td>{{ info[1] }}</td>
+        </tr>
+        <tr>
+            <th>案件名称</th>
+            <td>{{ info[2] }}</td>
+        </tr>
+        <tr>
+            <th>处罚类别</th>
+            <td>{{ info[3] }}</td>
+        </tr>
+        <tr>
+            <th>处罚事由</th>
+            <td>{{ info[4] }}</td>
+        </tr>
+        <tr>
+            <th>处罚依据</th>
+            <td>{{ info[5] }}</td>
+        </tr>
+        <tr>
+            <th>处罚结果</th>
+            <td>{{ info[6] }}</td>
+        </tr>
+        <tr>
+            <th>处罚日期</th>
+            <td>{{ info[7] }}</td>
+        </tr>
+        <tr>
+            <th>处罚机构</th>
+            <td>{{ info[8] }}</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

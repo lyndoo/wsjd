@@ -1,0 +1,97 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+{{ titleName }} - 公共场所
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style>
+        .table tr{height:5rem;}
+    </style>
+    <style type="text/css">
+        .child_header {height: 50px; padding: 8px 4%; width: 100%;background: url(/static/img/headpng.png) no-repeat; }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <table id="wrapper" class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <td colspan="2" class="text-center">
+                    <div class="input-group" style="width: 100%">
+                        <input id="txtname" type="text" class="form-control"/>
+                        <span id="btnSearch" class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+{% endblock %}
+
+
+{% block script %}
+    <script type="text/javascript">
+        var pageNO = 1;
+        $(document).ready(function(){
+            loadMore();
+            $("#btnSearch").click(search);
+            $("#txtname").keyup(function(){
+                if(event.keyCode == "13") {
+                    search();
+                }
+            });
+        });
+        function search(){
+            pageNO = 1;
+            $("#wrapper tbody").empty();
+            loadMore();
+        }
+        function loadMore()
+        {
+            $("body").mLoading();
+            $.ajax({
+                url : "/public/list/{{ p }}",
+                data : {
+                    name : $("#txtname").val(),
+                    pageNo : pageNO
+                },
+                type : 'POST',
+                dataType : "json",
+                success : function(result) {
+                    loading = true;
+                    if(pageNO != 1)
+                    {
+                        $("#wrapper tbody tr:last").remove();
+                    }
+                    if(result != null)
+                    {
+                          var content="";
+                          $.each(result.datas, function(infoIndex, info){
+                                  content = content +
+                                            '<tr>'
+                                            +	'<td width="45%"><a href="/public/{{ p }}/'+info["name"]+'">'+ info["name"] +'</a></td>'
+                                            +	'<td>'+info["address"]+'</td>'
+                                            +	'</tr>';
+                          });
+                        if(result.code == '1')
+                            content += "<tr><td class='text-center' colspan='2'><a href='javascript:loadMore();'>点击加载更多</a> </td></tr>";
+                        else
+                            content += "<tr><td class='text-center' colspan='2'>全部加载完成</td></tr>";
+                        $("#wrapper tbody").append(content);
+                        pageNO += 1;
+                        $("body").mLoading('hide');
+                    }
+                },
+                error : function(){
+                    loading=true;
+                    alert("查询数据出错啦，请刷新再试");
+                    $("body").mLoading('hide');
+                }
+            });
+        }
+    </script>
+{% endblock %}

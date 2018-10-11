@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family:"幼圆";
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}

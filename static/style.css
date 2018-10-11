@@ -1,0 +1,91 @@
+.child_header {height: 50px; padding: 8px 4%; width: 100%; }
+/*background: url(/static/img/headpng.png) no-repeat;*/
+.child_header .goback { float: left; width: 38% }
+.child_header .goback i { height: 32px; width: 70px; float: left; background: url(/static/back3.png) no-repeat center;background-size:contain; overflow: hidden;
+}
+.child_header .current_location span, #child_header .next_operate span { color: #000000; text-decoration: none; font-size: 16px; line-height: 36px; float: left }
+.child_header .current_location { }
+.child_header .current_location a { display: block }
+.child_header .current_location span { font-size: 18px; }
+.child_header .next_operate { float: right }
+body{
+    font-family:"幼圆";
+}
+.mapSize{
+    height:260px;
+    width: 100%;
+}
+        .subli li{
+            padding:10px 15px;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+        }
+        .subli li a{
+            color:#000;
+            font-size:16px;
+            padding:10px 20px;
+            background: url('/static/img/btn.png') no-repeat center;
+        }
+.subtable{
+    width: 100%;
+    color:#ffffff;
+}
+        .subtable tr td{
+            text-align: center;
+            padding:10px 15px;
+            font-size:16px;
+            font-weight: bold;
+        }
+        .subtable tr td a{
+            height: 56px;
+            vertical-align: middle;
+            font-size:16px;
+            color:#000;
+            line-height:42px;
+            padding:2px 20px;
+            background: url('/static/img/btn.png') no-repeat center;
+        }
+.swsnimg{
+    width:60px;
+    height:60px;
+}
+.itemheight{
+    height:60px;
+    vertical-align: middle;
+    text-align:center;
+}
+.phoneimg{
+    width:20px;
+    height:20px;
+}
+.santable{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+    .santable tr{
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+        .santable tr td{
+            padding: 15px;
+            line-height: 1.42857143;
+            vertical-align: top;
+        }
+        .santable tr td a{
+            color:#ffffff;
+        }
+
+.btnTop{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+}
+    .btnTop img{
+        width: 100%;height: 100%;
+    }
