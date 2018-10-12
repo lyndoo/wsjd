@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="cn">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
-        <meta name="x5-fullscreen" content="true">
-        <meta name="full-screen" content="yes">
-        {% block head %}
-            <title>
-            {% block title %}
-            {% endblock %}
-            </title>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no"/>
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    {% block head %}
+    <title>
+        {% block title %}
         {% endblock %}
-        <link href="{{ url_for('static', filename='bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet" />
-        <link href="{{ url_for('static', filename='js/loading/jquery.mloading.css') }}" rel="stylesheet" />
-        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
-    </head>
-    <body>
-        <!--<div class="child_header">-->
-            <!--<div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>-->
-        <!--</div>-->
-        {% block body %}
+    </title>
+    {% endblock %}
+    <link href="{{ url_for('static', filename='bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='js/loading/jquery.mloading.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet"/>
+    <style type="text/css">
+        {% block css %}
         {% endblock %}
-        <footer  class="text-center">
-            {% block footer %}
-            {% endblock %}
-            <a href="javascript:" style="display: none" class="btnTop" id="btnTop" title="回到顶端">
-                <img src="{{ url_for('static',filename='top.png')}}"/>
-            </a>
-        </footer>
-       <!-- 导入JS -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/loading/jquery.mloading.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
-        <script type="text/javascript">
+    </style>
+</head>
+<body>
+<!--<div class="child_header">-->
+<!--<div class="goback"><a href="javascript:history.back(-1)"><i></i></a></div>-->
+<!--</div>-->
+{% block body %}
+{% endblock %}
+<footer class="text-center">
+    {% block footer %}
+    {% endblock %}
+    <a href="javascript:" style="display: none" class="btnTop" id="btnTop" title="回到顶端">
+        <img src="{{ url_for('static',filename='top.png')}}"/>
+    </a>
+</footer>
+<!-- 导入JS -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/loading/jquery.mloading.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript">
             $(document).ready(function(){
                 var timer = null;
                 var screenHeight = document.documentElement.clientHeight;
@@ -50,9 +54,10 @@
                     document.body.scrollTop = document.documentElement.scrollTop = 0;
                 });
             });
-        </script>
-        {% block script %}
-        {% endblock %}
-        <!-- end -->
-    </body>
+
+</script>
+{% block script %}
+{% endblock %}
+<!-- end -->
+</body>
 </html>

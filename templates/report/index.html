@@ -1,54 +1,108 @@
 {% extends 'Master.html' %}
 {% block title %}
-    一键举报
+一键举报
 {% endblock %}
-{% block head %}
-    {{super()}}
-    <style type="text/css">
-        body {
-            background: url(/static/img/bodybg.jpg) no-repeat;
-        }
-        .subtable2{
-            width: 100%;
-            color:#ffffff;
-        }
-        .subtable2 tr td{
-            text-align: center;
-            padding:10px 15px;
-        }
-        .subtable2 tr td a{
-            height: 60px;
-            color:#000;
-            font-size:14px;
-            line-height:25px;
-            padding:2px 20px;
-            background: url('/static/img/btn2.png') no-repeat center;
-        }
-        .subtable2 tr td a img{
-            position:relative;
-            top: -3px;
-        }
-    </style>
+{% block css %}
+body {
+background: url(/static/img/bodybg.jpg) no-repeat;
+}
+<!--.subtable2{-->
+<!--width: 100%;-->
+<!--color:#ffffff;-->
+<!--}-->
+<!--.subtable2 tr td{-->
+<!--text-align: center;-->
+<!--padding:10px 15px;-->
+<!--}-->
+<!--.subtable2 tr td a{-->
+<!--height: 60px;-->
+<!--color:#000;-->
+<!--font-size:14px;-->
+<!--line-height:25px;-->
+<!--padding:2px 20px;-->
+<!--background: url('/static/img/btn2.png') no-repeat center;-->
+<!--}-->
+<!--.subtable2 tr td a img{-->
+<!--position:relative;-->
+<!--top: -3px;-->
+<!--}-->
+.phoneLink{
+height:50px;
+margin:10px 5px;
+padding:5px 1px;
+text-align: center;
+vertical-align: middle;
+white-space: normal;
+font-size:10px;
+}
+.sdiv{
+float:left;
+width: 33.33333333%;
+position: relative;
+}
+.phoneimg{
+width:22px;
+height:22px;
+float:left;
+}
+.btnReport{
+text-align:center;
+width:220px;
+height:200px;
+background: url(/static/img/earth.png) no-repeat;
+background-size:220px;
+display: inline-block;
+padding-top:20px;
+}
+.reportpng{
+max-width: 100%;
+max-height: 100%;
+
+}
+.bzd{
+height: 100px;
+display: table-cell;
+width: 500px;
+vertical-align: middle;
+}
 {% endblock %}
 {% block body %}
-asdfasdf
-    <table class="subtable2">
-            {% for name in names %}
-                <tr>
-                    <td>
-                        <a class="btn btn-block" href="tel:{{ name[1] }}">
-                            {{ name[0] }}<br/>
-                            <img src="{{ url_for('static', filename='img/phone.png') }}" class="phoneimg">&nbsp; {{ name[1] }}
-                        </a>
-                    </td>
-                </tr>
-            {% endfor %}
-        <tr>
-            <td>
-                <a class="btn btn-block" href="/report/online?scene=4#wechat_redirect">
-                    在线举报
-                </a>
-            </td>
-        </tr>
-    </table>
+<div class="container" style="margin-top:15px;">
+    {% for name in names %}
+    <div class="sdiv">
+        <a class="btn btn-default phoneLink" href="tel:{{ name[1] }}">
+            <img src="{{ url_for('static', filename='img/phone.png') }}" class="phoneimg"><b>
+            {{ name[0] }}</b></a>
+    </div>
+    {% endfor %}
+</div>
+<div style="text-align:center;width:100%;">
+    <div class="btnReport">
+        <div class="bzd">
+            <a href="/report/onlinefrist?scene=4#wechat_redirect" style="color:#ffd;font-size:32px;font-weight: bold;">
+                <img src="{{ url_for('static', filename='img/reportpng.png') }}" class="reportpng"><br/>
+                在线举报
+            </a>
+        </div>
+    </div>
+</div>
+<!--<table class="subtable2">-->
+<!--{% for name in names %}-->
+<!--<tr>-->
+<!--<td>-->
+<!--<a class="btn btn-block" href="tel:{{ name[1] }}">-->
+<!--{{ name[0] }}<br/>-->
+<!--<img src="{{ url_for('static', filename='img/phone.png') }}" class="phoneimg">&nbsp; {{ name[1] }}-->
+<!--</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--{% endfor %}-->
+<!--<tr>-->
+<!--<td>-->
+<!--<a class="btn btn-block" href="/report/online?scene=4#wechat_redirect">-->
+<!--在线举报-->
+<!--</a>-->
+<!--</td>-->
+<!--</tr>-->
+<!--</table>-->
 {% endblock %}

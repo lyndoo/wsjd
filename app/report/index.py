@@ -19,7 +19,10 @@ def index():
         names.append(sheet2.row_values(i))
     return render_template('report/index.html', names=names, ctime=mtime)
 
-
+@report.route('/onlinefrist')
+@cache.cached(timeout=86400)
+def ofirst():
+    return render_template('report/onlineFirst.html')
 
 
 

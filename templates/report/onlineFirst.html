@@ -1,0 +1,57 @@
+{% extends 'Master.html' %}
+{% block title %}
+在线举报
+{% endblock %}
+{% block css %}
+body {
+    background: url(/static/img/bodybg.jpg) no-repeat;
+    padding-top:5px;
+}
+.container{
+    text-align:center;
+}
+h1{
+    color:#93A7D1;
+}
+p {
+    display:block;
+    color:#fff;
+    background-color:#224680;
+    text-align:left;
+    padding:20px;
+    font-size:16px;
+    border-radius: 5px;
+}
+.nextbtn {
+    width:100%;
+    font-size:18px;
+    border: 1px solid #5B9BD5;
+    color:#fff;
+}
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>在线举报</h1>
+    <p>
+        &nbsp;&nbsp;举 报 说 明<br/>
+        &nbsp;&nbsp;《卫生监督观察》在线举报平台主要受理公众对卫生领域安全问题和违法行为的举报，由属地卫生计生监督部门依法处理。<br/>
+        &nbsp;&nbsp;1．举报范围：医疗卫生、传染病防治、公共场所卫生、饮用水卫生、学校卫生、放射卫生、职业健康、计划生育、消毒产品、餐饮具集中消毒监管等领域。<br/>
+        &nbsp;&nbsp;2．公众举报问题时，提倡实名举报，留言请保持真实、客观、准确，提交图片需附文字说明，以便卫生行政执法人员及时查处和反馈。<br/>
+        &nbsp;&nbsp;3． 为提高在线举报平台的运营效率，请不要重复提交举报信息。<br/>
+        &nbsp;&nbsp;4．请使用文明用语举报，上传不良信息恶意举报将交公安机关依法处理。<br/>
+        <span style="text-align:center;width:100%;display: block;">
+            <input type="checkbox" id="chkSelect" />&nbsp;已阅读说明
+        </span>
+    </p>
+    <a href="javascript:navNex();" class="btn nextbtn"><b> 下一步 </b></a>
+</div>
+{% endblock %}
+{% block script %}
+    <script type="text/javascript">
+        function navNex(){
+            if($('#chkSelect').prop("checked")){
+                window.location.href = '/report/online';
+            }
+        }
+    </script>
+{% endblock %}
