@@ -2,10 +2,12 @@ from flask import Flask
 from flask_cache import Cache
 from flask import render_template
 from flask import request
+from config import Config
+
 
 App = Flask(__name__)
 cache = Cache(App, config={'CACHE_TYPE': 'simple'})
-
+App.config['UPLOAD_FOLDER'] = Config.UPLOAD_FOLDER
 from app.sanitation import sanitation
 from app.report import report
 from app.penalty import penalty
