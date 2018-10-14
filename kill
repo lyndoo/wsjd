@@ -1,0 +1,2 @@
+pstree -ap|grep gunicorn
+kill -HUP 30080

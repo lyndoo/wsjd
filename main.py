@@ -19,6 +19,7 @@ from app.medical import medical
 from app.map import map
 from app.out import out
 from app.law import law
+from app.scan import scan
 App.register_blueprint(report, url_prefix='/report')
 App.register_blueprint(penalty, url_prefix='/penalty')
 App.register_blueprint(profession, url_prefix='/profession')
@@ -30,12 +31,17 @@ App.register_blueprint(medical, url_prefix='/medical')
 App.register_blueprint(map, url_prefix='/map')
 App.register_blueprint(out, url_prefix='/out')
 App.register_blueprint(law, url_prefix='/law')
+App.register_blueprint(scan, url_prefix='/scan')
 
 
 @App.route('/')
 def home():
     return render_template('home.html')
 
+@App.route('/MP_verify_9jYKdFS9fxfWUcUI.txt')
+def wxtxt():
+    return '9jYKdFS9fxfWUcUI'
+    #return render_template('MP_verify_9jYKdFS9fxfWUcUI.txt')
 
 @App.route('/home2')
 def home2():
@@ -51,4 +57,4 @@ def make_cache_key(*args, **kwargs):
 
 if __name__ == '__main__':
     #App.run()
-    App.run(host='0.0.0.0', port=8080)
+    App.run(host='0.0.0.0', port=80)

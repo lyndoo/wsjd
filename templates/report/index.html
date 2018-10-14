@@ -28,12 +28,17 @@ background: url(/static/img/bodybg.jpg) no-repeat;
 <!--}-->
 .phoneLink{
 height:50px;
-margin:10px 5px;
-padding:5px 1px;
+margin:5px 3px;
 text-align: center;
 vertical-align: middle;
 white-space: normal;
 font-size:10px;
+background: url(/static/img/btn_report.png) round;
+cursor: pointer;
+    touch-action: manipulation;
+user-select: none;
+padding: 6px 6px;
+display:block;
 }
 .sdiv{
 float:left;
@@ -70,7 +75,7 @@ vertical-align: middle;
 <div class="container" style="margin-top:15px;">
     {% for name in names %}
     <div class="sdiv">
-        <a class="btn btn-default phoneLink" href="tel:{{ name[1] }}">
+        <a class="phoneLink" href="tel:{{ name[1] }}">
             <img src="{{ url_for('static', filename='img/phone.png') }}" class="phoneimg"><b>
             {{ name[0] }}</b></a>
     </div>
