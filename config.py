@@ -7,7 +7,6 @@ class Config():
     APP_STATIC_DATA = os.path.join(APP_ROOT, 'static' + os.sep + 'data')  # 数据文件夹位置
     MYSQL_CONNECTION = ('localhost','root','123456','wsjd','utf8mb4')
     UPLOAD_FOLDER = os.path.abspath('.')+ os.path.sep+ 'static'+os.path.sep+'Uploads'  # 文件下载路径
-
-    if not os.path.exists(UPLOAD_FOLDER):
-        os.mkdir(UPLOAD_FOLDER)
+    ADMIN_PWD = 'wsjdadmin123$'
+    PAGE_SIZE = 20
     #UPLOAD_FOLDER = 'static' + os.path.sep + 'Uploads'  # 文件下载路径

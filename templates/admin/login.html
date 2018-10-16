@@ -1,0 +1,38 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+网站后台内容管理系统
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <link href="{{ url_for('static', filename='public/css/base.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='public/css/login.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+
+<div class="login">
+    <form action="/admin/login" method="post" id="form">
+        <div class="logo"></div>
+        <div class="login_form">
+            <div class="user">
+                <input class="text_value" value="" name="username" type="text" id="username">
+                <input class="text_value" value="" name="password" type="password" id="password">
+            </div>
+            <button class="button" id="submit" type="submit">登录</button>
+        </div>
+
+        <div id="tip">
+            {{ msg }}
+        </div>
+        <!--<div class="foot">-->
+            <!--Copyright &copy; 2018.Company name All rights reserved.-->
+        <!--</div>-->
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock%}
+

@@ -5,7 +5,7 @@ from app import Sign
 from main import cache
 
 #AppID = 'wx9c05576f1b274ddf'
-#appsecret = ''
+#appsecret = '333a34b141992e89619587114a1aa34a'
 
 #testappid
 AppId = 'wx0740bc697491a6fd'

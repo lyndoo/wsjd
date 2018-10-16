@@ -6,6 +6,8 @@ import os,base64,uuid
 from config import Config
 import xlrd
 import time
+import dal
+from dal.reportdal import Report
 
 @report.route('/')
 @cache.cached(timeout=86400)
@@ -25,7 +27,6 @@ def ofirst():
     return render_template('report/onlineFirst.html')
 
 
-
 @report.route('/online',methods=['POST','GET'])
 def onlinereport():
     if request.method == 'GET':
@@ -38,31 +39,10 @@ def onlinereport():
 
         imgs = saveimg(request.form.getlist('image[]'))
         print(imgs)
-        host,user,password,db,charset = Config.MYSQL_CONNECTION
-        connection = pymysql.connect(host=host,user=user,password=password,db=db,charset=charset,cursorclass=pymysql.cursors.DictCursor)
-        try:
-            if imgs:#如果有上传图片
-                img_ids = []
-                for i in imgs:
-                    with connection.cursor() as cursor:
-                        sql = "INSERT INTO attach(filename) VALUES (%s)"
-                        cursor.executemany(sql, (i,))
-                    connection.commit()
-                    img_ids.append(str(cursor.lastrowid))
-                reportInfo.append(','.join(img_ids))
-            else:
-                reportInfo.append('')
 
-
-            with connection.cursor() as cursor:
-                sql = "INSERT INTO report(title,content,informer,informerPhone,informerAddress,Attach) VALUES (%s, %s, %s, %s, %s, %s)"
-                cursor.execute(sql, reportInfo)
-            connection.commit()
-            return  render_template('report/online.html',status=200,msg='举报已提交')
-        finally:
-            connection.close()
-        return  render_template('report/online.html',status=500,msg='举报提交失败')
-
+        r = Report()
+        status,msg = r.add_report(imgs,reportInfo)
+        return render_template('report/online.html', status=status, msg=msg)
 
 def saveimg(base64Imgs):
     '''保存图片并返回路径列表'''

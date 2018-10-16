@@ -1,0 +1,69 @@
+{% extends 'AdminMaster.html' %}
+
+{% block title %}
+网站后台内容管理系统 - 投诉举报
+{% endblock %}
+
+
+{% block css %}
+{% endblock %}
+{% block body %}
+<form action="" method="post" id="form">
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th colspan="7" style="text-align:center;font-size:16px">投诉举报</th>
+            </tr>
+            <tr>
+                <th>编号</th>
+                <th>标题</th>
+                <th>举报人</th>
+                <th>举报人电话</th>
+                <th>举报人地址</th>
+                <th>是否回复</th>
+                <th>操作</th>
+            </tr>
+            {% if result %}
+                {% for i in result %}
+                    <tr>
+                        <td>{{ i.ser }}</td>
+                        <td>{{ i.title }}</td>
+                        <td>{{ i.informer }}</td>
+                        <td>{{ i.informerPhone }}</td>
+                        <td>{{ i.informerAddress }}</td>
+                        <td><span style="color:{{ 'red' if not i.IsReply else 'green' }}">●</span>{{ '未回复' if not i.IsReply else '已回复' }}</td>
+                        <td>
+                            {% if not i.IsReply %}
+                                <a href="javascript:replyReport({{ i.ser }})">确认回复</a>&nbsp;&nbsp;&nbsp;
+                            {% endif %}
+                            <a href="/admin/vreport_{{ i.ser }}">查看</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            <tr>
+                <td colspan="7">
+                    <span>当前第 {{ currentPage }} 页,共 {{ totalPage }} 页</span>
+                </td>
+            </tr>
+        </table>
+        <ul class="pagination" style="margin-top:5px;">
+            <li><a href="/admin/lreport_{{ prevPage }}">上一页</a></li>
+            <li><a href="/admin/lreport_{{ nextPage }}">下一页</a></li>
+        </ul>
+    </div>
+</form>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+    function replyReport(ser){
+        $.get('/admin/rreport_'+ser,function(data){
+            console.log(data);
+            alert(data);
+            window.location.reload();
+        });
+    }
+    </script>
+{% endblock%}
+

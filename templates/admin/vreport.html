@@ -1,0 +1,70 @@
+{% extends 'AdminMaster.html' %}
+
+{% block title %}
+网站后台内容管理系统 - 投诉举报 - 详情
+{% endblock %}
+
+{% block css %}
+    table td:nth-child(even){
+        text-align:left;
+    }
+    table td:nth-child(odd){
+        text-align:right;
+        width:20%;
+    }
+{% endblock %}
+
+{% block body %}
+<form action="" method="post" id="form">
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <td colspan="2" style="text-align:center;font-size:16px"><b>投诉举报详情</b></td>
+            </tr>
+            <tr>
+                <td>标题:</td>
+                <td>{{ result.title }}</td>
+            </tr>
+            <tr>
+                <td>内容:</td>
+                <td>{{ result.content }}</td>
+            </tr>
+            <tr>
+                <td>举报人:</td>
+                <td>{{ result.informer }}</td>
+            </tr>
+            <tr>
+                <td>举报人电话:</td>
+                <td>{{ result.informerPhone }}</td>
+            </tr>
+            <tr>
+                <td>举报人地址:</td>
+                <td>{{ result.informerAddress }}</td>
+            </tr>
+            <tr>
+                <td>是否已回复:</td>
+                <td>{{  '已回复' if result.IsReply else '尚未回复'  }}</td>
+            </tr>
+            <tr>
+                <td>附件:</td>
+                <td>{% if attachs %}
+                        {% for i in attachs %}
+                          <a target="_blank" href="/static/Uploads/{{ i.filename }}"><img src="/static/Uploads/{{ i.filename }}" style="width:200px;height:200px;"></a>
+                        {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a href="javascript:history.go(-1);">返回</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+{% endblock %}
+
+{% block script %}
+{% endblock%}
+
