@@ -29,7 +29,7 @@ def getWxData(url):
     sign = Sign.Sign(jsp_api_tikcet,url)
     return sign.sign()
 
-#@cache.memoize(timeout=7000)
+@cache.memoize(timeout=7000)
 def create_AccessToken():
     url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid="+AppId+"&secret="+ app_Secret  # 这里是需要获取的网页
     res = requests.get(url)  # 使用urllib模块获取网页内容
@@ -38,7 +38,7 @@ def create_AccessToken():
     return content['access_token']
 
 
-#@cache.memoize(timeout=7000)
+@cache.memoize(timeout=7000)
 def create_JsApiTicket(accesstoken):
     url = 'https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token='+accesstoken+'&type=jsapi'  # 这里是需要获取的网页
     res = requests.get(url)  # 使用urllib模块获取网页内容
