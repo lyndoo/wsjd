@@ -1,5 +1,5 @@
 pstree -ap|grep gunicorn
-kill -HUP 25472
+kill -HUP 27540
 
 /home/www/wsjd/
 /home/www/wsjd_test/
