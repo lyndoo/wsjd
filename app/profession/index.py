@@ -6,3 +6,7 @@ from . import profession
 def index():
     return render_template('profession/index.html')
 
+@profession.route('/other')
+def other():
+    return render_template('profession/other.html')
+

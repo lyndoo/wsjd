@@ -1,0 +1,23 @@
+{% extends 'Master.html' %}
+
+{% block title %}
+    一键办证
+{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <style type="text/css">
+        body {
+            background: url(/static/img/bodybg.jpg) no-repeat;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<table class="subtable">
+    <tr><td><a class="btn btn-block" href="http://weixin.cyrytj.com/subscriptionController/cardService.do">健康证办理</a></td></tr>
+</table>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
