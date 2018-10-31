@@ -1,2 +1,7 @@
 pstree -ap|grep gunicorn
-kill -HUP 30080
+kill -HUP 25472
+
+/home/www/wsjd/
+/home/www/wsjd_test/
+/etc/nginx/conf.d/wsjd
+gunicorn -c gun.conf main:App

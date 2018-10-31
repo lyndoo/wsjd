@@ -8,7 +8,7 @@
     <script type="text/javascript">
         $(function () {
             wx.config({
-                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
+                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来
                 appId: '{{ AppInfo.appID }}', // 必填，公众号的唯一标识
                 timestamp: {{ AppInfo.timestamp }}, // 必填，生成签名的时间戳
                 nonceStr: '{{ AppInfo.nonceStr }}', // 必填，生成签名的随机串
@@ -36,6 +36,6 @@
     </script>
 </head>
 <body>
-<h2 id="msg"></h2>
+<h2 id="msg">{{ error }}</h2>
 </body>
 </html>
